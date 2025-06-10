@@ -36,12 +36,18 @@
     <ul>
       <li>Abrir Visual Studio .NET y elegir Crear Nuevo Proyecto C# tipo Consola.</li>
       <pre><code>En los combos desplegables superiores, elegir:
-C# - All Platforms – Console
-Luego C# Console App (.NET Core) y botón Next
-Nombre del proyecto: guestlist-manager-cli-csharp 
-Ubicación: elegir una carpeta de trabajo.
-Se crea el proyecto y se abre la aplicación principal.</code></pre>
+C# - All Platforms – Console</code></pre>
+<pre><code>Luego C# Console App (.NET Core) y botón Next</code></pre>
+<pre><code>Nombre del proyecto: guestlist-manager-cli-csharp 
+Ubicación: elegir una carpeta de trabajo.</code></pre>
+<pre><code>Se crea el proyecto y se abre la aplicación principal.</code></pre>
     </ul>
+  </div>
+</div>
+
+<div>
+  <!--Caso de estudio-->
+  <div>
     <p>
       <h3 align="center">Instalar MongoDB C#/.NET Driver</h3>
     </p>
@@ -54,6 +60,12 @@ Se crea el proyecto y se abre la aplicación principal.</code></pre>
       <pre><code>En la ventana inferior llamada Package Manager Console escribir: 
 PM> Install-Package MongoDB.Driver -version 2.10.3 &lt;enter&gt;</code></pre>
     </ul>
+  </div>
+</div>
+
+<div>
+  <!--Caso de estudio-->
+  <div>
     <p>
       <h3 align="center">Crear clases Instanciables</h3>
     </p>
@@ -61,76 +73,124 @@ PM> Install-Package MongoDB.Driver -version 2.10.3 &lt;enter&gt;</code></pre>
     <pre><code>clic derecho -> Add -> New Item -> Visual C# Class</code></pre>
     <ul>
       <li>Crear la clase GuestModel.cs con el siguiente código:</li>
-      
-      using MongoDB.Bson.Serialization.Attributes; 
-      using System;
-      
-      namespace guestlist_manager_cli_csharp 
-      { 
-        public class GuestModel 
-        { 
-          [BsonId]  // _id 
-          public Guid Id { get; set; } 
-          public string Email { get; set; } 
-  [Ver instrucciones completas](./guestlist-manager-cli-csharp/guestlist-manager-cli-csharp/GuestModel.cs)
-      <li>Crear la clase MongoHelper.cs con el siguiente código:</li>
-
-      using MongoDB.Driver; 
-      using MongoDB.Bson; 
-      using System; 
-      using System.Collections.Generic;
-      
-      namespace guestlist_manager_cli_csharp 
-      { 
-          public class MongoHelper 
-          { 
-              private IMongoDatabase db; 
-       
-              public MongoHelper(string connectionString, string databaseName) 
-              { 
-  [Ver instrucciones completas](./MongoHelper.cs)
-      <li>Crear la clase ConsoleTable.cs con el siguiente código: </li>
-
-    using System.Collections.Generic; 
-    using System.Linq; 
-     
-    namespace guestlist_manager_cli_csharp 
-    { 
-        public class ConsoleTable 
-        { 
-  [Ver instrucciones completas](./MongoHelper.cs)
-      <li>Crear la clase DialogHelper.cs con el siguiente código:</li>
-
-    using System; 
-    using System.Collections.Generic; 
-     
-    namespace guestlist_manager_cli_csharp 
-    { 
-        public static class DialogHelper 
-        { 
-            public static int ShowMainMenu() 
-            { 
-  [Ver instrucciones completas](./MongoHelper.cs)
     </ul>
-      <p>
-        <h3 align="center">Aplicación principal </h3>
-      </p>
-      <ul>
-        <li>Modificar el método main de la aplicación de consola llamado Program.cs</li>
+    <div>
+      <pre><code>using MongoDB.Bson.Serialization.Attributes; 
+using System;
+<enter></enter>
+namespace guestlist_manager_cli_csharp 
+{ 
+  public class GuestModel 
+  { 
+    [BsonId]  // _id 
+    public Guid Id { get; set; } 
+    public string Email { get; set; }</code></pre>
+    </div>
+  </div>
+</div>
 
-    using System; 
-    
-    namespace guestlist_manager_cli_csharp 
-    { 
-        class Program 
-        { 
-            static void Main(string[] args) 
-            { 
-  [Ver instrucciones completas](./Program.cs)
-      </ul>
-      <p>
-        <h3 aling="center">Ejecutar la aplicación de consola</h3>
-      </p>
-      <ul>
-        <li>Realizar operaciones CRUD</li>
-      </ul>
+[Ver código completo](./guestlist-manager-cli-csharp/guestlist-manager-cli-csharp/GuestModel.cs)
+
+<div>
+  <!--Caso de estudio-->
+  <div>
+    <ul> 
+      <li>Crear la clase MongoHelper.cs con el siguiente código:</li>
+    </ul>
+    <div>
+      <pre><code>using MongoDB.Driver; 
+using MongoDB.Bson; 
+using System; 
+using System.Collections.Generic;
+<enter></enter>
+namespace guestlist_manager_cli_csharp 
+{ 
+  public class MongoHelper 
+  { 
+    private IMongoDatabase db;
+    <enter></enter>
+    public MongoHelper(string connectionString, string databaseName) 
+    { </code></pre>
+    </div>
+  </div>
+</div>
+
+[Ver código completo](./guestlist-manager-cli-csharp/guestlist-manager-cli-csharp/MongoHelper.cs)
+
+<div>
+  <!--Caso de estudio-->
+  <div>
+    <ul> 
+      <li>Crear la clase ConsoleTable.cs con el siguiente código: </li>
+    </ul>
+    <div>
+      <pre><code>using System.Collections.Generic; 
+using System.Linq; 
+<enter></enter>
+namespace guestlist_manager_cli_csharp 
+{ 
+  public class ConsoleTable 
+  {   </code></pre>
+    </div>
+  </div>
+</div>
+
+[Ver código completo](./guestlist-manager-cli-csharp/guestlist-manager-cli-csharp/ConsoleTable.cs)
+
+<div>
+  <!--Caso de estudio-->
+  <div>
+    <ul> 
+      <li>Crear la clase DialogHelper.cs con el siguiente código:</li>
+    </ul>
+    <div>
+      <pre><code>using System; 
+using System.Collections.Generic;
+<enter></enter>
+namespace guestlist_manager_cli_csharp 
+{ 
+  public static class DialogHelper 
+  { 
+    public static int ShowMainMenu() 
+    { </code></pre>
+    </div>
+  </div>
+</div>
+
+[Ver código completo](./guestlist-manager-cli-csharp/guestlist-manager-cli-csharp/DialogHelper.cs) 
+
+<div>
+  <!--Caso de estudio-->
+  <div>
+    <p>
+      <h3 align="center">Aplicación principal </h3>
+    </p>
+    <ul>
+      <li>Modificar el método main de la aplicación de consola llamado Program.cs</li>
+    </ul>
+    <div>
+      <pre><code>using System;
+<enter></enter>
+namespace guestlist_manager_cli_csharp 
+{ 
+  class Program 
+  { 
+    static void Main(string[] args) 
+    { </code></pre>
+    </div>
+  </div>
+</div>
+
+[Ver código completo](./guestlist-manager-cli-csharp/guestlist-manager-cli-csharp/Program.cs)
+
+<div>
+  <!--Caso de estudio-->
+  <div>
+    <p>
+      <h3 aling="center">Ejecutar la aplicación de consola</h3>
+    </p>
+    <ul>
+      <li>Realizar operaciones CRUD</li>
+    </ul>
+  </div>
+</div>
