@@ -72,7 +72,7 @@ PM> Install-Package MongoDB.Driver -version 2.10.3 &lt;enter&gt;</code></pre>
           [BsonId]  // _id 
           public Guid Id { get; set; } 
           public string Email { get; set; } 
-  [Ver instrucciones completas](./guestlist-manager-cli-csharp/obj/GuestModel.cs)
+  [Ver instrucciones completas](./guestlist-manager-cli-csharp/guestlist-manager-cli-csharp/guestlist-manager-cli-csharp/GuestModel.cs)
       <li>Crear la clase MongoHelper.cs con el siguiente código:</li>
 
       using MongoDB.Driver; 
